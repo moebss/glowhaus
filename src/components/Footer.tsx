@@ -15,7 +15,7 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="bg-darker pt-32 pb-8 border-t border-white/5">
+      <footer className="bg-darker pt-32 pb-8 border-t border-light/5">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
             <div className="lg:col-span-1">
@@ -26,10 +26,10 @@ export default function Footer() {
               </a>
               <p className="text-light/50 text-sm leading-relaxed mb-8">GlowHaus - Dein exklusives Beauty & Tattoo Studio in Köln. Premium Lashes, Nails & Fineline.</p>
               <div className="flex gap-4">
-                <a href="https://www.instagram.com/gorillas_ink/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-light/50 hover:text-gold hover:border-gold transition-all duration-300">
+                <a href="https://www.instagram.com/gorillas_ink/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-light/10 flex items-center justify-center text-light/50 hover:text-gold hover:border-gold transition-all duration-300">
                   <Instagram size={18} />
                 </a>
-                <a href="#" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-light/50 hover:text-gold hover:border-gold transition-all duration-300">
+                <a href="#" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-light/10 flex items-center justify-center text-light/50 hover:text-gold hover:border-gold transition-all duration-300">
                   <Facebook size={18} />
                 </a>
               </div>
@@ -57,7 +57,7 @@ export default function Footer() {
               <h4 className="font-serif text-xl text-light mb-6">Öffnungszeiten</h4>
               <ul className="space-y-4 text-sm">
                 {OPENING_HOURS.map((hours, idx) => (
-                  <li key={idx} className={`flex justify-between border-b border-white/5 pb-2 ${hours.dimmed ? 'text-light/40' : 'text-light/70'}`}>
+                  <li key={idx} className={`flex justify-between border-b border-light/5 pb-2 ${hours.dimmed ? 'text-light/40' : 'text-light/70'}`}>
                     <span>{hours.days}</span>
                     <span>{hours.hours}</span>
                   </li>
@@ -74,7 +74,7 @@ export default function Footer() {
             </div>
           </div>
           
-          <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-light/40 uppercase tracking-widest">
+          <div className="border-t border-light/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-light/40 uppercase tracking-widest">
             <p>&copy; {new Date().getFullYear()} GlowHaus Köln. Alle Rechte vorbehalten.</p>
             <p>Made with Love by GlowHaus</p>
           </div>

@@ -44,7 +44,7 @@ export default function Portfolio() {
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
             className="font-serif text-4xl md:text-6xl text-light leading-tight mb-12"
           >
-            Unsere <span className="italic text-white/80">Arbeiten</span>
+            Unsere <span className="italic text-light/80">Arbeiten</span>
           </motion.h3>
 
           {/* Filter tabs */}

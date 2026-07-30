@@ -46,13 +46,13 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
           <h2 className="text-gold uppercase tracking-[0.2em] text-sm mb-4">Leistungen</h2>
-          <h3 className="font-serif text-4xl md:text-6xl text-light leading-tight">Was wir <span className="italic text-white/80">anbieten</span></h3>
+          <h3 className="font-serif text-4xl md:text-6xl text-light leading-tight">Was wir <span className="italic text-light/80">anbieten</span></h3>
         </motion.div>
         
         <div className="grid md:grid-cols-2 gap-8">
           {services.map((svc, idx) => (
-            <motion.div key={svc.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.2 }} className="p-8 md:p-12 border border-white/10 hover:border-gold bg-darker rounded-sm relative transition-colors duration-300 group">
-              <h4 className="text-2xl font-serif text-light mb-4">{svc.name}</h4>
+            <motion.div key={svc.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.2 }} className="p-8 md:p-12 border border-light/10 hover:border-gold bg-darker rounded-sm relative transition-colors duration-300 group">
+              <h4 className="text-2xl font-serif text-light group-hover:text-gold transition-colors duration-300 mb-4">{svc.name}</h4>
               <p className="text-light/70 mb-8">{svc.description}</p>
               
               <div className="mb-8 space-y-2">

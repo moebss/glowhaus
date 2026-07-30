@@ -22,12 +22,12 @@ export default function FAQ() {
       <div className="max-w-3xl mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-gold uppercase tracking-[0.2em] text-sm mb-4">FAQ</motion.h2>
-          <motion.h3 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="font-serif text-4xl md:text-6xl text-light leading-tight">Häufige <span className="italic text-white/80">Fragen</span></motion.h3>
+          <motion.h3 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="font-serif text-4xl md:text-6xl text-light leading-tight">Häufige <span className="italic text-light/80">Fragen</span></motion.h3>
         </div>
         
         <div className="space-y-2">
           {FAQ_ITEMS.map((faq, idx) => (
-            <div key={idx} className="border-b border-white/10">
+            <div key={idx} className="border-b border-light/10">
               <button onClick={() => toggle(idx)} className="w-full flex items-center justify-between py-6 text-left focus:outline-none group">
                 <span className="font-serif text-xl text-light group-hover:text-gold transition-colors">{faq.question}</span>
                 <ChevronDown className={`text-gold transition-transform duration-300 ${openIndex === idx ? 'rotate-180' : ''}`} />

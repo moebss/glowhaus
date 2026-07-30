@@ -66,11 +66,11 @@ export default function About() {
                 alt="Studio Interior"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               />
-              <div className="absolute inset-0 border border-white/10 m-4 pointer-events-none"></div>
+              <div className="absolute inset-0 border border-light/10 m-4 pointer-events-none"></div>
             </div>
 
             {/* Stats strip — replaces the old static badge */}
-            <div className="grid grid-cols-3 gap-4 mt-6 p-6 bg-anthracite border border-white/5">
+            <div className="grid grid-cols-3 gap-4 mt-6 p-6 bg-anthracite border border-light/5">
               <StatCounter value={4} suffix="+" label="Jahre" />
               <StatCounter value={1000} suffix="+" label="Treatments" />
               <StatCounter value={128} suffix="" label="Bewertungen" />
@@ -98,7 +98,7 @@ export default function About() {
               transition={{ delay: 0.2 }}
               className="font-serif text-4xl md:text-6xl text-light leading-tight mb-12"
             >
-              Perfektion <span className="italic text-white/80">und Ästhetik.</span>
+              Perfektion <span className="italic text-light/80">und Ästhetik.</span>
             </motion.h3>
 
             <p className="text-light/70 leading-relaxed mb-12 text-lg">

@@ -3,17 +3,17 @@
 
 const WORDS = [
   "GLOWHAUS",
-  "·",
+  "★",
   "NAILS",
-  "·",
+  "★",
   "LASHES",
-  "·",
+  "★",
   "BROWS",
-  "·",
+  "★",
   "FINELINE",
-  "·",
+  "★",
   "KÖLN",
-  "·",
+  "★",
 ];
 
 export default function Marquee() {
@@ -21,7 +21,7 @@ export default function Marquee() {
   const repeated = [...WORDS, ...WORDS, ...WORDS];
 
   return (
-    <div className="overflow-hidden py-5 bg-darker border-y border-white/5 select-none">
+    <div className="overflow-hidden py-5 bg-darker border-y border-light/5 select-none">
       <div
         className="flex gap-8 whitespace-nowrap"
         style={{
@@ -33,9 +33,9 @@ export default function Marquee() {
           <span
             key={i}
             className={
-              word === "·"
+              word === "★"
                 ? "text-gold text-lg"
-                : "text-light/20 text-xs uppercase tracking-[0.3em] font-medium"
+                : "text-light/35 text-xs uppercase tracking-[0.3em] font-medium"
             }
           >
             {word}

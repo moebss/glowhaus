@@ -52,7 +52,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full w-full bg-darker/95 backdrop-blur-xl border-t border-white/5 py-6 px-6 md:hidden flex flex-col gap-6"
+            className="absolute top-full w-full bg-darker/95 backdrop-blur-xl border-t border-light/5 py-6 px-6 md:hidden flex flex-col gap-6"
           >
             <ul className="flex flex-col gap-4">
               {NAV_LINKS.map(link => (
