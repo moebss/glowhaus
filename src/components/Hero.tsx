@@ -8,6 +8,7 @@ export default function Hero() {
         <img src={heroImg} alt="Studio" className="w-full h-full object-cover opacity-40" referrerPolicy="no-referrer" />
         <div className="absolute inset-0 bg-gradient-to-b from-darker/60 via-darker/80 to-darker"></div>
       </div>
+      <div className="absolute inset-0 z-10 pointer-events-none opacity-[0.15] mix-blend-overlay" style={{backgroundImage: "url('data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')"}}></div>
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center text-center mt-20">
         <p className="text-gold uppercase tracking-[0.3em] text-sm md:text-base mb-6">Dein Premium Studio für Beauty & Fineline in Köln</p>
         

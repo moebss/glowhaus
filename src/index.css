@@ -2,14 +2,14 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Jost', ui-sans-serif, system-ui, sans-serif;
   --font-serif: 'Playfair Display', ui-serif, Georgia, serif;
   --color-gold: #DDA7A5;
   --color-gold-hover: #E5B6B5;
   --color-dark: #F4EAE6;
-  --color-darker: #FDFBF7;
+  --color-darker: #1A1514;
   --color-anthracite: #EFE5E2;
-  --color-light: #2A2426;
+  --color-light: #F7F4F2;
 }
 
 body { 
