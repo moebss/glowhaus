@@ -29,22 +29,22 @@ export default function Portfolio() {
     : GALLERY_ITEMS.filter(item => item.category === activeFilter);
 
   return (
-    <section id="portfolio" className="py-32 bg-darker relative">
+    <section id="portfolio" className="py-[var(--spacing-section)] bg-base relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
 
         {/* Header */}
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="text-gold uppercase tracking-[0.2em] text-sm mb-4"
+            className="text-accent uppercase tracking-[0.2em] text-sm mb-4"
           >
             Portfolio
           </motion.h2>
           <motion.h3
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
-            className="font-serif text-4xl md:text-6xl text-light leading-tight mb-12"
+            className="font-serif text-[length:var(--text-h2)] text-typo leading-tight mb-12 text-balance"
           >
-            Unsere <span className="italic text-light/80">Arbeiten</span>
+            Unsere <span className="italic text-typo-muted">Arbeiten</span>
           </motion.h3>
 
           {/* Filter tabs */}
@@ -56,8 +56,8 @@ export default function Portfolio() {
               <button
                 key={style}
                 onClick={() => setActiveFilter(style)}
-                className={`uppercase tracking-widest text-xs md:text-sm pb-2 border-b-2 transition-all duration-300 cursor-pointer ${
-                  activeFilter === style ? 'border-gold text-gold' : 'border-transparent text-light/50 hover:text-light'
+                className={`uppercase tracking-widest text-xs md:text-sm pb-2 border-b-2 transition-colors duration-500 focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none cursor-pointer ${
+                  activeFilter === style ? 'border-accent text-accent' : 'border-transparent text-typo-muted hover:text-typo'
                 }`}
               >
                 {style}
@@ -66,7 +66,7 @@ export default function Portfolio() {
           </motion.div>
         </div>
 
-        {/* Grid — Hover-Reveal pattern */}
+        {/* Grid - Orchestrated Hover Pattern */}
         <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0.5">
           <AnimatePresence>
             {filteredItems.map((item, idx) => (
@@ -77,28 +77,30 @@ export default function Portfolio() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.4, delay: idx * 0.06 }}
-                className="group relative aspect-square overflow-hidden cursor-pointer"
+                className="group relative aspect-[3/4] overflow-hidden bg-base-light cursor-pointer focus-visible:ring-4 focus-visible:ring-accent focus-visible:outline-none"
                 onClick={() => setSelectedItem(item)}
+                tabIndex={0}
               >
-                {/* Image — greyscale by default, colour on hover */}
+                {/* Image uses CSS custom grading and scales on hover via transform */}
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                  className="w-full h-full object-cover image-grading transition-transform duration-700 ease-[var(--ease-signature)] group-hover:scale-105"
+                  referrerPolicy="no-referrer"
                 />
 
-                {/* Full-cover dark reveal overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-darker/90 via-darker/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                {/* Full-cover dark reveal overlay (opacity only) */}
+                <div className="absolute inset-0 bg-gradient-to-t from-base/90 via-base/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-[var(--ease-signature)]" />
 
-                {/* Text reveal — slides up on hover */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  <p className="text-gold uppercase tracking-[0.25em] text-xs mb-1">{item.subtitle}</p>
-                  <p className="text-light font-serif text-xl">{item.title}</p>
+                {/* Text reveal slides up on hover via transform */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-[var(--ease-signature)]">
+                  <p className="text-accent uppercase tracking-[0.25em] text-xs mb-1">{item.subtitle}</p>
+                  <p className="text-typo font-serif text-xl text-balance">{item.title}</p>
                 </div>
 
                 {/* Top-right category chip */}
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="bg-darker/80 backdrop-blur-sm text-light/70 text-[10px] uppercase tracking-widest px-3 py-1">
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-[var(--ease-signature)]">
+                  <span className="bg-base/80 backdrop-blur-sm text-typo-muted text-[10px] uppercase tracking-widest px-3 py-1">
                     {item.category}
                   </span>
                 </div>
@@ -115,29 +117,31 @@ export default function Portfolio() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-darker/96 backdrop-blur-sm flex items-center justify-center p-4 md:p-16"
+            transition={{ duration: 0.4, ease: [0.2, 0.8, 0.2, 1] }}
+            className="fixed inset-0 z-[100] bg-base/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-16"
             onClick={() => setSelectedItem(null)}
           >
             <button
               aria-label="Schließen"
-              className="absolute top-8 right-8 text-light/40 hover:text-gold transition-colors cursor-pointer"
+              className="absolute top-8 right-8 text-typo-muted hover:text-accent transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none"
             >
               <X size={32} />
             </button>
 
             <div className="flex flex-col md:flex-row items-center gap-8 max-w-5xl w-full" onClick={e => e.stopPropagation()}>
               <motion.img
-                initial={{ scale: 0.92, opacity: 0 }}
+                initial={{ scale: 0.95, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.4 }}
+                exit={{ scale: 0.95, opacity: 0 }}
+                transition={{ duration: 0.4, ease: [0.2, 0.8, 0.2, 1] }}
                 src={selectedItem.image}
                 alt={selectedItem.title}
-                className="max-h-[75vh] max-w-full object-contain rounded-sm shadow-2xl"
+                className="max-h-[75vh] max-w-full object-contain rounded-sm shadow-2xl image-grading"
               />
               <div className="text-center md:text-left shrink-0">
-                <p className="text-gold uppercase tracking-[0.25em] text-xs mb-3">{selectedItem.subtitle}</p>
-                <h4 className="font-serif text-3xl text-light mb-2">{selectedItem.title}</h4>
-                <p className="text-light/40 text-sm uppercase tracking-widest">{selectedItem.category}</p>
+                <p className="text-accent uppercase tracking-[0.25em] text-xs mb-3">{selectedItem.subtitle}</p>
+                <h4 className="font-serif text-3xl text-typo mb-2 text-balance">{selectedItem.title}</h4>
+                <p className="text-typo-muted text-sm uppercase tracking-widest">{selectedItem.category}</p>
               </div>
             </div>
           </motion.div>
