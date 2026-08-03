@@ -1,0 +1,15 @@
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  base: '/thomas-reinhard-elektro/',
+  server: {
+    port: 3010,
+    host: true
+  },
+  preview: {
+    port: 3010,
+    host: true
+  }
+});
